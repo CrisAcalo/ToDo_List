@@ -1,3 +1,39 @@
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #17a2b8;
+  --light-color: #f8f9fa;
+  --dark-color: #343a40;
+
+  --primary-color-light: #53a9ff;
+  --primary-color-dark: #005cb8;
+
+  --secondary-color-light: #b3b8bd;
+  --secondary-color-dark: #4d5459;
+
+  --success-color-light: #66ff99;
+  --success-color-dark: #009933;
+
+  --danger-color-light: #ff6666;
+  --danger-color-dark: #990000;
+
+  --warning-color-light: #ffd966;
+  --warning-color-dark: #cc9900;
+
+  --info-color-light: #66ccff;
+  --info-color-dark: #0066cc;
+
+  --light-color-light: #f2f3f4;
+  --light-color-dark: #d6d8db;
+
+  --dark-color-light: #4d5258;
+  --dark-color-dark: #1a1d21;
+
+}
+
 .App {
   text-align: center;
 }
@@ -12,6 +48,39 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
+.primaryButton:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.primaryButton {
+  position: relative;
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background 0.3s;
+}
+
+.ripple {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: scale(0);
+  animation: rippleEffect 0.3s linear;
+}
+
+@keyframes rippleEffect {
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
 
 .App-header {
   background-color: #233553;
@@ -28,10 +97,13 @@
   color: #97ca3f;
 }
 
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
