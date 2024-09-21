@@ -1,4 +1,4 @@
-@import url('../../App.css');
+@import url('../App/App.css');
 
 li{
     position: relative;
@@ -21,7 +21,8 @@ li p {
     width: 90%;
 }
 
-.deleteIconContainer
+li div,
+.todoActionButton
 {
     display: flex;
     justify-content: center;
@@ -30,16 +31,6 @@ li p {
     padding: 12px 0;
     font-size: 1.5rem;
     text-align: center;
-    width: 10%;
-    transition: all 200ms;
-}
-
-.todoActionButton
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 8px;
     width: 10%;
     transition: all 200ms;
 }
@@ -58,6 +49,6 @@ li .todoActionButton:hover{
     font-size: 1.3rem;
 }
 
-.deleteIconContainer svg:hover{
+.deleteIconContainer i:hover{
     color: var(--danger-color);
 }
