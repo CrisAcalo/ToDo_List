@@ -14,9 +14,9 @@ const defaultTodos = [
   { text: 'Tomar el curso de intro a React', completed: false },
   { text: 'Actividad 3', completed: false },
   { text: 'Actividad 4', completed: false },
-  { text: 'Actividad 5', completed: true },
+  { text: 'Actividad 5 aaaaaaaaaaa aaaaaaaaaaaaaaaaaa aaaaaaaaaaaa', completed: true },
   { text: 'Actividad 6', completed: false },
-  { text: 'Actividad 7 aaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaaa', completed: false },
+  { text: 'Actividad 7', completed: false },
   { text: 'Actividad 8', completed: true },
   { text: 'Actividad 9', completed: false },
   { text: 'Actividad 10', completed: false },
@@ -32,41 +32,98 @@ const defaultTodos = [
   { text: 'Actividad 20', completed: false },
 ];
 
-let todosCompleted = defaultTodos.filter(todo => todo.completed);
-let todosPending = defaultTodos.filter(todo => !todo.completed);
 
 function App() {
+
+  //Todos
+  const [todos, setTodos] = React.useState(defaultTodos);
+
+  //TodoSearch Component Status
+  const [searchValue, setSearchValue] = React.useState('');
+
+  //TodoCounter Component Status
+  const [textTodoCounter, setTextTodoCounter] = React.useState('Felicidades! Has completado todas tus actividades');
+  
+  const searchedTodos = todos.filter(
+    (todo) => {
+      const todoText = todo.text.toLowerCase();
+      return todoText.includes(searchValue.toLowerCase())
+    }
+  );
+
+  //Filtar Todos
+  const todosCompleted = searchedTodos.filter(todo => todo.completed);
+  const todosPending = searchedTodos.filter(todo => !todo.completed);
+
+  //Contar Todos
+  const nTodosCompleted = todosCompleted.length;
+  const nTodosPending = todosPending.length;
+
+  const completeTodo = (text, actualStatus) => {
+    const todoIndex = todos.findIndex(todo => todo.text === text);
+    const newTodos = [...todos];
+    newTodos[todoIndex].completed = !actualStatus;
+    setTodos(newTodos);
+  }
+
+  const deleteTodo = (text) => {
+    const todoIndex = todos.findIndex(todo => todo.text === text);
+    const newTodos = [...todos];
+    newTodos.splice(todoIndex, 1);
+    setTodos(newTodos);
+  }
+
   return (
     <React.Fragment>
+
       <div className="principal_container">
+
         <div className="header_container">
+
           <PrincipalTitle text="¡To Do Organizer!" />
-          <TodoCounter completed={16} total={20} />
-          <TodoSearch />
+          <TodoCounter
+          completed={nTodosCompleted}
+          total={nTodosCompleted + nTodosPending}
+          textTodoCounter={textTodoCounter}
+          setTextTodoCounter={setTextTodoCounter}/>
+          <TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
+
         </div>
 
         <div className="listsContainer">
 
-          <TodoList title="Completadas">
-            {
-              todosCompleted.map(todo => (
-                <ToDoItem text={todo.text} completed={todo.completed} />
-              ))
-            }
-          </TodoList>
-
-
           <TodoList title="Pendientes">
             {
               todosPending.map(todo => (
-                <ToDoItem text={todo.text} completed={todo.completed} />
+                <ToDoItem
+                  key={todo.text}
+                  text={todo.text}
+                  completed={todo.completed}
+                  todos={todos}
+                  setTodos={setTodos}
+                  onComplete={() => completeTodo(todo.text, todo.completed)}
+                  onDelete={() => deleteTodo(todo.text)} />
+              ))
+            }
+          </TodoList>
+          <TodoList title="Completadas">
+            {
+              todosCompleted.map(todo => (
+                <ToDoItem
+                  key={todo.text}
+                  text={todo.text}
+                  completed={todo.completed}
+                  todos={todos}
+                  setTodos={setTodos}
+                  onComplete={() => completeTodo(todo.text, todo.completed)}
+                  onDelete={() => deleteTodo(todo.text)} />
               ))
             }
           </TodoList>
 
-
         </div>
         <CreateTodoButton />
+
       </div>
 
     </React.Fragment>

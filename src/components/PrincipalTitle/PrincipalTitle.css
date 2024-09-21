@@ -1,4 +1,20 @@
-h1{
-    font-size: 3rem;
-    text-shadow: 3px 3px 3px #000000b2;
+h1 {
+    font-size: 3.3rem;
+    /* text-shadow: 3px 3px 3px #ffffff75; */
+    margin-bottom: 40px;
+    text-shadow: 0 0 4px rgba(255, 255, 255, 1),
+        0 0 15px rgba(255, 255, 255, 1),
+        0 0 30px rgba(255, 255, 255, 0.7),
+        0 0 40px #e55c7e,
+        0 0 70px #e55c7e,
+        0 0 80px #e55c7e,
+        0 0 100px #e55c7e;
+    color: var(--light-color);
+    padding: 0 20px;
+}
+
+@media (max-width:375px) {
+    h1 {
+        font-size: 2.5rem;
+    }
 }

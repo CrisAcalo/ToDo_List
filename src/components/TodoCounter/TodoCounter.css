@@ -1,4 +1,12 @@
 h2{
     font-size: 2rem;
     text-shadow: 3px 3px 3px #000000b2;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+@media (max-width:375px) {
+    h2 {
+        font-size: 1.5rem;
+    }
 }

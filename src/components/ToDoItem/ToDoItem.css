@@ -1,34 +1,54 @@
 @import url('../../App.css');
 
 li{
+    position: relative;
     display: flex;
-    margin: 10px 0;
-    transition: 100ms;
+    margin: 15px 0;
+    transition: all 100ms;
+    background: #0000007a;
+    box-shadow: 2px 2px 5px #0000004e;
+    border-radius: 8px;
+    padding: 0;
 }
 
 li:hover{
-    transform: scale(1.007);
+    transform: scale(1.008);
 }
 
 li p {
-    border: 1px solid var(--light-color);
-    background: #0000007a;
-    padding: 10px;
-    border-radius: 4px;
+    align-self: center;
+    padding: 12px;
     width: 90%;
 }
 
-li div{
-    border: 1px solid var(--light-color);
-    background: #00000053;
-    padding: 10px;
-    border-radius: 4px;
-    width: 10%;
+li div,
+.todoActionButton
+{
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 8px;
+    padding: 12px 0;
+    font-size: 1.5rem;
+    text-align: center;
+    width: 10%;
+    transition: all 200ms;
 }
 
-li div i {
-    font-weight: 700;
+li .todoActionButton:hover{
+    background: #0000007a;
+}
+
+.deleteIconContainer{
+    color: var(--danger-color-light);
+    position: absolute;
+    width: max-content;
+    height: max-content;
+    right: -8px;
+    top: -20px;
+    font-size: 1.3rem;
+}
+
+.deleteIconContainer i:hover{
+    color: var(--danger-color);
 }
