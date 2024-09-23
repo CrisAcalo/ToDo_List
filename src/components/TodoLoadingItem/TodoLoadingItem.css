@@ -1,0 +1,71 @@
+li.TodoLoadingItem {
+    display: flex;
+    padding: 10px;
+    background: #00000042;
+    margin: 0 0 10px 0;
+    border-radius: 8px;
+}
+
+li.TodoLoadingItem div:first-child {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background: #0000007a;
+    animation: pulse 1s infinite;
+}
+
+li.TodoLoadingItem div:last-child {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+li.TodoLoadingItem div:last-child span:nth-child(1) {
+    width: 100%;
+    height: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    background: #0000007a;
+    background: linear-gradient(to left, #0000007a, #0000003e, #0000007a);
+    background-size: 200% 100%;
+    animation: backgroundAnimation 1s linear infinite;
+}
+
+li.TodoLoadingItem div:last-child span:nth-child(2) {
+    width: 70%;
+    height: 15px;
+    border-radius: 6px;
+    background: linear-gradient(to left, #0000007a, #0000003e, #0000007a);
+    background-size: 200% 100%;
+    animation: backgroundAnimation 1s linear infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.6;
+    }
+}
+
+/* Another keyframe that change the background from left to right using gradient*/
+@keyframes backgroundAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}

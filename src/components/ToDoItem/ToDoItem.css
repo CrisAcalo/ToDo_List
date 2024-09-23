@@ -1,6 +1,6 @@
 @import url('../App/App.css');
 
-li{
+li.ToDoItem{
     position: relative;
     display: flex;
     margin: 15px 0;
@@ -11,17 +11,17 @@ li{
     padding: 0;
 }
 
-li:hover{
+li.ToDoItem:hover{
     transform: scale(1.008);
 }
 
-li p {
+li.ToDoItem p {
     align-self: center;
     padding: 12px;
     width: 90%;
 }
 
-li div,
+li.ToDoItem div,
 .todoActionButton
 {
     display: flex;
@@ -35,7 +35,7 @@ li div,
     transition: all 200ms;
 }
 
-li .todoActionButton:hover{
+li.ToDoItem .todoActionButton:hover{
     background: #0000007a;
 }
 

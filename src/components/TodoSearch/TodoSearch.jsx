@@ -1,10 +1,10 @@
 import './TodoSearch.css';
 import React from 'react';
+import { TodoContext } from '../../TodoContext';
 
-const TodoSearch = ({
-    searchValue,
-    setSearchValue
-}) => {
+const TodoSearch = () => {
+
+    const { searchValue, setSearchValue } = React.useContext(TodoContext);
 
     return (
         <input className="searchInput" placeholder="Actididad N"

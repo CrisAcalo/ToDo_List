@@ -9,7 +9,7 @@ function ToDoItem(props) {
     let styleText = props.completed ? { textDecoration: 'line-through', color: 'var(--secondary-color-light)' } : { textDecoration: 'none' };
 
     return (
-        <li>
+        <li className="ToDoItem">
             <i className={classIcon} style={styleIcon}
                 onMouseOver={
                     () => {

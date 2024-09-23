@@ -1,15 +1,30 @@
 import './TodoCounter.css';
+import React from 'react';
+import { TodoContext } from '../../TodoContext';
 
-function TodoCounter(props) {
-    
-    if (props.completed < props.total) {
-        props.setTextTodoCounter('Has completado ' + props.completed + ' de ' + props.total + ' TODOs');
-    }else{
-        props.setTextTodoCounter('Felicidades! Has completado todas tus actividades :D');
-    }
+function TodoCounter() {
+
+    const {
+        nTodosCompleted,
+        nTodosPending,
+        textTodoCounter,
+        setTextTodoCounter } = React.useContext(TodoContext);
+
+    React.useEffect(
+        () => {
+            if ((nTodosCompleted + nTodosPending) === 0) {
+                setTextTodoCounter('Ingresa una tarea nwn');
+            }
+            else if (nTodosCompleted < (nTodosCompleted + nTodosPending)) {
+                setTextTodoCounter('Has completado ' + nTodosCompleted + ' de ' + (nTodosCompleted + nTodosPending) + ' TODOs');
+            } else {
+                setTextTodoCounter('Felicidades! Has completado todas tus actividades :D');
+            }
+        }, [nTodosCompleted, nTodosPending]
+    );
 
     return (
-        <h2 className="title_h2">{props.textTodoCounter}</h2>
+        <h2 className="title_h2">{textTodoCounter}</h2>
     );
 }
 
