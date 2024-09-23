@@ -13,8 +13,14 @@ function TodoProvider({ children }) {
         error
     } = useLocalStorage('TODOS_V1', []);
 
+    //TodoCounter Component Status
+    const [textTodoCounter, setTextTodoCounter] = React.useState('Ingresa una tarea nwn');
+
     //TodoSearch Component Status
     const [searchValue, setSearchValue] = React.useState('');
+
+    //Modal Component Status
+    const [openModal, setOpenModal] = React.useState(false);
 
     const searchedTodos = todos.filter(
         (todo) => {
@@ -45,8 +51,6 @@ function TodoProvider({ children }) {
         setTodos(newTodos);
     }
 
-    //TodoCounter Component Status
-    const [textTodoCounter, setTextTodoCounter] = React.useState('Ingresa una tarea nwn');
 
     return (
         <TodoContext.Provider value={{
@@ -56,6 +60,8 @@ function TodoProvider({ children }) {
             setTextTodoCounter,
             searchValue,
             setSearchValue,
+            openModal,
+            setOpenModal,
             todosCompleted,
             todosPending,
             completeTodo,

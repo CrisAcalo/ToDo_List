@@ -9,13 +9,16 @@ import { PrincipalTitle } from '../PrincipalTitle/PrincipalTitle';
 import { TodosErrors } from '../TodosErrors/TodosErrors';
 import { TodoLoadingItem } from '../TodoLoadingItem/TodoLoadingItem';
 import { TodoContext } from '../../TodoContext';
+import { Modal } from '../Modal/Modal';
 
-function AppUI({ }) {
+function AppUI() {
     const { error,
         loading,
         todosCompleted,
         todosPending,
         completeTodo,
+        openModal,
+        setOpenModal,
         deleteTodo } = React.useContext(TodoContext);
 
     return (
@@ -91,6 +94,11 @@ function AppUI({ }) {
 
                 <CreateTodoButton />
             </div>
+            {openModal && (
+                <Modal>
+                    
+                </Modal>
+            )}
         </React.Fragment>
     );
 }

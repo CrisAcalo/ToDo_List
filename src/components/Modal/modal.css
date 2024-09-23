@@ -1,0 +1,72 @@
+div.modalBackground{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.169);
+    backdrop-filter: blur(5px);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+}
+
+div.modalSection{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 150;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    transition: all 0.5s;
+}
+
+div.modalContainer{
+    background-color: rgba(0, 0, 0, 0.459);
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.091);
+    backdrop-filter: blur(7px);
+    width: 80%;
+    max-width: 500px;
+}
+
+div.modalContainer .modalHeader{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.091);
+    padding: 15px;
+}
+
+div.modalContainer .modalHeader h3{
+    color: var(--light-color);
+    text-shadow: 3px 3px 3px #00000069;
+    font-size: 1.5rem;
+    text-align: center;
+    text-shadow:    0 0 4px rgba(255, 255, 255, 0),
+                    0 0 15px rgba(255, 0, 166, 0.552),
+                    0 0 15px rgba(255, 255, 255, 0), 
+                    0 0 20px #c32cff88, 
+                    0 0 35px #c32cff88, 
+                    0 0 40px #c32cff88, 
+                    0 0 50px #c32cff88;
+}
+
+div.modalContainer .modalHeader button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.6rem;
+    
+    color: #ffffff;
+}
+
+div.modalContainer .modalBody{
+    padding: 50px;
+}
