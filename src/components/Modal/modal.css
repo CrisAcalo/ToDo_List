@@ -32,14 +32,13 @@ div.modalContainer{
     border-radius: 10px;
     border: 2px solid rgba(255, 255, 255, 0.091);
     backdrop-filter: blur(7px);
-    width: 80%;
+    width: 90%;
     max-width: 500px;
 }
 
 div.modalContainer .modalHeader{
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
     border-bottom: 2px solid rgba(255, 255, 255, 0.091);
     padding: 15px;
 }
@@ -68,5 +67,5 @@ div.modalContainer .modalHeader button{
 }
 
 div.modalContainer .modalBody{
-    padding: 50px;
+    padding: 15px;
 }

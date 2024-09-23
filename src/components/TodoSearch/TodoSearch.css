@@ -9,6 +9,6 @@ input.searchInput{
 }
 
 input.searchInput:focus{
-    outline: 4px solid #e55c7e;
+    outline: 4px solid var(--danger-color-light);
     outline-offset: 2px;
 }

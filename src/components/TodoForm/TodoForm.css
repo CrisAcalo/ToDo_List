@@ -1,0 +1,63 @@
+@import url('../App/App.css');
+
+form.newTodoForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--light-color-ligh);
+}
+
+form.newTodoForm label{
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.newTodoInput{
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--light-color-light);
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.newTodoInput:focus{
+    outline: 2px solid var(--danger-color-light);
+    outline-offset: 2px;
+}
+
+
+form.newTodoForm .buttonContainer{
+    display: flex;
+    justify-content: center;
+}
+
+form.newTodoForm .buttonContainer button{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: var(--light-color-light);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    margin:0 10px;
+}
+
+form.newTodoForm .buttonContainer button.addButton{
+    background: rgba(255, 0, 106, 0.713);
+}
+
+form.newTodoForm .buttonContainer button.addButton:hover{
+    box-shadow: 0 0 20px 4px #ff2cc090;
+}
+
+form.newTodoForm .buttonContainer button.cancelButton{
+    background: #ffffff7a;
+}
+
+form.newTodoForm .buttonContainer button.cancelButton:hover{
+    box-shadow: 0 0 20px 4px #ffffff73;
+}

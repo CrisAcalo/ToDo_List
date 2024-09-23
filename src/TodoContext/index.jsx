@@ -37,6 +37,15 @@ function TodoProvider({ children }) {
     const nTodosCompleted = todosCompleted.length;
     const nTodosPending = todosPending.length;
 
+    const addTodo = (text) => {
+        const newTodos = [...todos];
+        newTodos.push({
+            text,
+            completed: false
+        });
+        setTodos(newTodos);
+    }
+
     const completeTodo = (text, actualStatus) => {
         const todoIndex = todos.findIndex(todo => todo.text === text);
         const newTodos = [...todos];
@@ -64,6 +73,7 @@ function TodoProvider({ children }) {
             setOpenModal,
             todosCompleted,
             todosPending,
+            addTodo,
             completeTodo,
             deleteTodo,
             loading,

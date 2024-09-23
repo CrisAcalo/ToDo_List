@@ -39,13 +39,15 @@ li.ToDoItem .todoActionButton:hover{
     background: #0000007a;
 }
 
-.deleteIconContainer{
+li.ToDoItem div.deleteIconContainer{
     color: var(--danger-color-light);
     position: absolute;
     width: max-content;
     height: max-content;
-    right: -8px;
-    top: -20px;
+    padding: 0;
+    margin: 0;
+    right: 0px;
+    top: -10px;
     font-size: 1.3rem;
 }
 

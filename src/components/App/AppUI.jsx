@@ -10,6 +10,7 @@ import { TodosErrors } from '../TodosErrors/TodosErrors';
 import { TodoLoadingItem } from '../TodoLoadingItem/TodoLoadingItem';
 import { TodoContext } from '../../TodoContext';
 import { Modal } from '../Modal/Modal';
+import {TodoForm} from '../TodoForm/TodoForm';
 
 function AppUI() {
     const { error,
@@ -95,8 +96,8 @@ function AppUI() {
                 <CreateTodoButton />
             </div>
             {openModal && (
-                <Modal>
-                    
+                <Modal title="Create Todo">
+                    <TodoForm></TodoForm>
                 </Modal>
             )}
         </React.Fragment>

@@ -4,8 +4,8 @@ import './modal.css';
 import { TodoContext } from '../../TodoContext';
 
 function Modal(props) {
-    
-    const {setOpenModal} = React.useContext(TodoContext);
+
+    const { setOpenModal } = React.useContext(TodoContext);
     const text = props.title ? props.title : 'Modal Title';
 
     return ReactDOM.createPortal(
@@ -16,7 +16,10 @@ function Modal(props) {
                 <div className="modalContainer">
                     <div className="modalHeader">
                         <h3>{text}</h3>
-                        <button className="modalCloseButton" onClick={()=>{setOpenModal(false)}}><i className="bi bi-x-lg"></i></button>
+                        <button className="modalCloseButton"
+                            onClick={() => { setOpenModal(false) }}>
+                            <i className="bi bi-x-lg"></i>
+                        </button>
                     </div>
                     <div className="modalBody">
                         {props.children}
